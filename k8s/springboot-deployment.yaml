@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
         - name: springboot
-          image: springboot-demo:latest
+          image: 882961514310.dkr.ecr.ap-south-1.amazonaws.com/springboot-app:latest
           imagePullPolicy: Never
           ports:
             - containerPort: 8080
