@@ -11,6 +11,7 @@ spec:
     - port: 8080
       targetPort: 8080
       nodePort: 30080
+  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -29,7 +30,6 @@ spec:
       containers:
         - name: springboot
           image: 882961514310.dkr.ecr.ap-south-1.amazonaws.com/springboot-app:latest
-          imagePullPolicy: Never
           ports:
             - containerPort: 8080
           env:
