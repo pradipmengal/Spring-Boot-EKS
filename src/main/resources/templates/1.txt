@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Employees</title></head>
+<body>
+  <h1>Employee List</h1>
+  <form action="/add" method="post">
+    Name: <input name="name" required />
+    Role: <input name="role" required />
+    <button type="submit">Add</button>
+  </form>
+
+  <ul>
+    <li th:each="emp : ${employees}">
+      <span th:text="${emp.name} + ' - ' + ${emp.role}"></span>
+      <a th:href="@{'/delete/' + ${emp.id}}">Delete</a>
+    </li>
+  </ul>
+</body>
+</html>
